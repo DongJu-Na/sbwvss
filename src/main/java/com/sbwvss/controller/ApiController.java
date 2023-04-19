@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.sbwvss.service.ApiService;
 
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Mono;
 
@@ -19,6 +21,7 @@ public class ApiController {
 	@Autowired
 	ApiService service;
 	
+	@ApiResponses(value = { @ApiResponse(responseCode = "200", description = "get All Tweets") })
   @GetMapping(value = "video/{title}", produces = "video/mp4")
   public Mono<Resource> getVideo(@PathVariable String title, @RequestHeader("Range") String range) {
       log.info("range > " + range);

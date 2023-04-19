@@ -3,13 +3,10 @@ spring:
     active: local
 
 springdoc:
-  version: '@project.version@'
+  version: '@springdoc.version@'
   swagger-ui:
-    use-root-path: false
-    enable-native-support: true
-    disable-swagger-default-url: true
+    use-root-path: true
     
-
 ---
 spring:
   config:
