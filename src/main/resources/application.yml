@@ -1,0 +1,38 @@
+spring:
+  profiles:
+    active: local
+
+springdoc:
+  version: '@project.version@'
+  swagger-ui:
+    use-root-path: false
+    enable-native-support: true
+    disable-swagger-default-url: true
+    
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  devtools:
+    restart:
+      enabled: true
+server:
+  title: sbwbss-local
+  port : 8080
+  
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+  devtools:
+    restart:
+      enabled: true
+         
+server:
+  title: sbwbss-prod
+  port : 8081
+
+ 
