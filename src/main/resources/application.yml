@@ -3,9 +3,11 @@ spring:
     active: local
 
 springdoc:
-  version: '@springdoc.version@'
+  version: '0.1'
   swagger-ui:
     use-root-path: true
+
+
     
 ---
 spring:

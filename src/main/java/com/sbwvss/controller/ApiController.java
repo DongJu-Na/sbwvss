@@ -12,9 +12,11 @@ import com.sbwvss.service.ApiService;
 
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Mono;
 
+@Tag(name = "Video API", description = "동영상 관련 컨트롤러")
 @RequestMapping("/api")
 @Slf4j
 @RestController
@@ -23,7 +25,7 @@ public class ApiController {
 	@Autowired
 	ApiService service;
 	
-	@ApiResponses(value = { @ApiResponse(responseCode = "200", description = "get All Tweets") })
+	@ApiResponses(value = { @ApiResponse(responseCode = "200", description = "성공") })
   @GetMapping(value = "/video/{title}", produces = "video/mp4")
   public Mono<Resource> getVideo(@PathVariable String title, @RequestHeader("Range") String range) {
       log.info("range > " + range);
