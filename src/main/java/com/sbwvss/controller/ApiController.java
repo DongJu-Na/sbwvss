@@ -25,6 +25,13 @@ public class ApiController {
 	@Autowired
 	ApiService service;
 	
+	/*
+	Accept-Ranges: bytes
+	Content-Type: video/mp4
+	Content-Range: bytes 0-500/21589849
+	Content-Length: 501
+	*/
+	
 	@ApiResponses(value = { @ApiResponse(responseCode = "200", description = "성공") })
   @GetMapping(value = "/video/{title}", produces = "video/mp4")
   public Mono<Resource> getVideo(@PathVariable String title, @RequestHeader("Range") String range) {
